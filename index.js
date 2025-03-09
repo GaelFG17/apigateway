@@ -1,13 +1,7 @@
-const express = require('express');
-const cors = require('cors');
+const Server = require("./server/server");
 
-const PORT = 4000;
-// crear la instacia del servidor
-const app = express();
-app.use(cors());
-app.use(express.json());
+const PORT = 4000
+const server = new Server(PORT)
 
 
-app.listen(PORT, () => {
-    console.log('Servidor running in http://localhost:' + PORT);
-}); 
+server.start()
